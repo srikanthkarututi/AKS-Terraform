@@ -9,7 +9,7 @@ data "azurerm_resource_group" "default" {
 
 
 resource "azurerm_container_registry" "acr" {
-  name                = "${random_pet.prefix.id}-acr1"
+  name                = "SrikanthRegistry78654"
   resource_group_name = data.azurerm_resource_group.default.name
   location            = data.azurerm_resource_group.default.location
   sku                 = "Standard"
