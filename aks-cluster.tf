@@ -4,7 +4,7 @@ resource "random_pet" "prefix" {}
 
 data "azurerm_resource_group" "default" {
   name = "rg-c2s-internal-srikanthk"
-  location = "West US"
+  #location = "West US"
 }
 
 
