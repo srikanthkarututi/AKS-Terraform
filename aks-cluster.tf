@@ -9,7 +9,7 @@ data "azurerm_resource_group" "default" {
 
 
 resource "azurerm_container_registry" "acr" {
-  name                = "MyRegistry-sk-ACR"
+  name                = "${random_pet.prefix.id}-acr1"
   resource_group_name = data.azurerm_resource_group.default.name
   location            = data.azurerm_resource_group.default.location
   sku                 = "Standard"
@@ -18,7 +18,7 @@ resource "azurerm_container_registry" "acr" {
 }
 
 resource "azurerm_kubernetes_cluster" "default" {
-  name               = "${random_pet.prefix.id}-sk-AKS"
+  name               = "${random_pet.prefix.id}-k8s"
   location            = data.azurerm_resource_group.default.location
   resource_group_name = data.azurerm_resource_group.default.name
   dns_prefix          = "${random_pet.prefix.id}-k8s"
