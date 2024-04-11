@@ -14,7 +14,7 @@ resource "azurerm_role_assignment" "acr_pull_role" {
 }
 
 resource "azurerm_container_registry" "acr" {
-  name                = "registry-sk-369"
+  name                = "registry-sk-acr4me"
   resource_group_name = data.azurerm_resource_group.default.name
   location            = data.azurerm_resource_group.default.location
   sku                 = "Standard"
@@ -23,7 +23,7 @@ resource "azurerm_container_registry" "acr" {
 }
 
 resource "azurerm_kubernetes_cluster" "default" {
-  name               = "${random_pet.prefix.id}-k8s-369"
+  name               = "${random_pet.prefix.id}-k8s-4me"
   location            = data.azurerm_resource_group.default.location
   resource_group_name = data.azurerm_resource_group.default.name
   dns_prefix          = "${random_pet.prefix.id}-k8s"
