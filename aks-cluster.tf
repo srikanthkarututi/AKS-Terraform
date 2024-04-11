@@ -14,7 +14,7 @@ resource "azurerm_role_assignment" "acr_pull_role" {
 }
 
 resource "azurerm_container_registry" "acr" {
-  name                = "registry-sk-acr4me"
+  name                = "registry4metowork"
   resource_group_name = data.azurerm_resource_group.default.name
   location            = data.azurerm_resource_group.default.location
   sku                 = "Standard"
