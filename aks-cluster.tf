@@ -7,6 +7,11 @@ data "azurerm_resource_group" "default" {
   #location = "West US"
 }
 
+resource "azurerm_role_assignment" "acr_pull_role" {
+  scope                = azurerm_container_registry.acr.id
+  role_definition_name = "AcrPull"
+  principal_id         = var.resourcegroupid
+}
 
 resource "azurerm_container_registry" "acr" {
   name                = "SrikanthRegistry78654"
